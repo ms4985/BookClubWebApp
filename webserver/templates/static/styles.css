@@ -1,0 +1,42 @@
+body {
+	background-image: url("https://s-media-cache-ak0.pinimg.com/originals/07/b5/33/07b53325883402c71c8a996866b38c06.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+    -webkit-background-size: cover; /* Add in these */
+    -moz-background-size: cover;    /* four lines to */
+    -o-background-size: cover;      /* remove the white space*/
+    background-size: cover;         /* around images */
+
+    color:#1F4E65;
+}
+
+h1, h3 {
+	text-align: center;
+}
+
+form {
+	padding-bottom: 100px;
+}
+
+.list * {
+	font-size: 18px;
+}
+
+.navbar-default {
+	background-color: #6B4040;
+	border-color: #653232;
+}
+
+.navbar-default .navbar-nav>li>a {
+	font-size: 16px;
+	color: #C1C8CC;
+}
+
+.navbar-default .navbar-brand {
+    color: #94A4AD;
+}
+
+.row {
+	margin-top: 50px;
+}

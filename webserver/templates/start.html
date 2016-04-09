@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+
+
+<body>
+
+{% with messages = get_flashed_messages() %}
+   {% if messages %}
+     <ul class="flashes">
+        {% for message in messages %}
+         <div class="message_flash">{{ message }}</div>
+        {% endfor %}
+    </ul>
+  {% endif %}
+ {% endwith %}
+{% block body %}
+{% endblock %}
+
+<h1> Book Club Web App </h1>
+<h2> Please enter your login information</h2>
+
+<form action="http://db4111.cloudapp.net:8111/login" method="POST">
+  first name: <input name= "first"/> <br/>
+  last name: <input name= "last"/> <br/>
+  <input type="submit" value="Login">
+</form>
+
+<h2> Or signup!</h2>
+<form action="http://db4111.cloudapp.net:8111/users/add/">
+	<input type="submit" value="Signup">
+</form>
+
+</body>
+</html>

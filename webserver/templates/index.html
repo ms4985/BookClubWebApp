@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link href="/static/styles.css" type="text/css" rel="stylesheet"/>
+
+
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Book Clubs</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="http://db4111.cloudapp.net:8111/">Home</a></li>
+					<li><a href="http://db4111.cloudapp.net:8111/clubs">Clubs</a></li>
+					<li><a href="http://db4111.cloudapp.net:8111/books">Books</a></li>
+					<li><a href="http://db4111.cloudapp.net:8111/speakers">Speakers</a></li>
+					<li><a href="http://db4111.cloudapp.net:8111/locations">Locations</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+	<h1>Book Club Web App</h1>
+
+	<div class="row">
+		<div class="col-md-4">
+
+			<form action="http://db4111.cloudapp.net:8111/users/add">
+				<button type="submit" class="btn btn-lg btn-default center-block" aria-label="...">
+					<span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span>
+					Add new user
+				</button>
+			</form>
+		</div>
+		<div class="col-md-4">
+
+			<form action="http://db4111.cloudapp.net:8111/speakers/add">
+				<button type="submit" class="btn btn-lg btn-default center-block" aria-label="...">
+					<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+					Sign up as a speaker
+				</button>
+			</form>
+		</div>
+		<div class="col-md-4">
+
+			<form action="http://db4111.cloudapp.net:8111/clubs/info">
+				<button type="submit" class="btn btn-lg btn-default center-block" aria-label="...">
+					<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+					View club page
+				</button>
+			</form>
+		</div>
+	</div>
+<h1>hello</h1>
+{% for n in data %}
+	{{n}}
+{% endfor %}
+
+{% if data == 'True' %}
+	<h3> Admin Priviledges </h3>
+	<table border="0">
+	<tr>
+	<td><form action="http://db4111.cloudapp.net:8111/clubs/add">
+		<input type="submit" value="Add Club">
+	</form></td>
+	<td><form action ="http://db411.cloudapp.net:8111/books/add">
+		<input type="submit" value="Add Book">
+	</form></td>
+	<td><form action="http://db411.cloudapp.net:8111/users/add">
+		<input type="submit" value="Add User">
+	</form></td>
+	<td><form acion ="http://db4111.cloudapp.net:8111/speakers/add">
+		<input type="submit" value="Add Speaker">
+	</form></td>
+	<td><form action ="http://db4111.cloudapp.net:8111/locations/add">
+		<input type="submit" value="Add Location">
+	</form></td>
+	</tr></table>
+   {% endif %}
+
+{% with messages = get_flashed_messages() %}
+   {% if messages %}
+     <ul class="flashes">
+        {% for message in messages %}
+         <div class="message_flash">{{ message }}</div>
+        {% endfor %}
+    </ul>
+  {% endif %}
+ {% endwith %}
+{% block body %}
+{% endblock %}
+
+</body>
+</html>

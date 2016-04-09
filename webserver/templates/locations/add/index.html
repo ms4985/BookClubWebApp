@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+
+
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Book Clubs</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="http://db4111.cloudapp.net:8111/">Home</a></li>
+          <li><a href="http://db4111.cloudapp.net:8111/clubs">Clubs</a></li>
+          <li><a href="http://db4111.cloudapp.net:8111/books">Books</a></li>
+          <li><a href="http://db4111.cloudapp.net:8111/speakers">Speakers</a></li>
+          <li><a href="http://db4111.cloudapp.net:8111/locations">Locations</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+<h1>Add a Location</h1>  
+<h3 class="col-md-8 col-md-offset-2">Sorry, we don't have that location yet.  Please feel free to add it in!</h3>
+
+
+<form action="http://db4111.cloudapp.net:8111/locations/add/" class="col-md-4 col-md-offset-4" method="POST">
+  <div class="form-group">
+    <label>City</label>
+    <input type="text" name="city" class="form-control" placeholder="los angeles">
+  </div>
+  <div class="form-group">
+    <label>State</label>
+    <input type="text" name="state" class="form-control" placeholder="ca">
+  </div>
+  <div class="form-group">
+    <label>Zipcode</label>
+    <input type="number" name="zipcode" class="form-control" placeholder="12345">
+  </div>
+  <div class="form-group">
+    <label>Country</label>
+    <input type="text" name="country" class="form-control" placeholder="usa">
+  </div>
+  <button type="submit" class="btn btn-default center-block">Submit</button>
+</form>
+
+
+</body>
+</html>

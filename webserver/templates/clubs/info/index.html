@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+
+
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Book Clubs</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="http://db4111.cloudapp.net:8111/">Home</a></li>
+          <li><a href="http://db4111.cloudapp.net:8111/clubs">Clubs</a></li>
+          <li><a href="http://db4111.cloudapp.net:8111/books">Books</a></li>
+          <li><a href="http://db4111.cloudapp.net:8111/speakers">Speakers</a></li>
+          <li><a href="http://db4111.cloudapp.net:8111/locations">Locations</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+<h1>Book Clubs</h1>
+  
+<form action="http://db4111.cloudapp.net:8111/clubs/info/club_members" class="col-md-4" method="POST">
+  <div class="form-group">
+    <label>Club Name</label>
+    <input type="text" name="name1" class="form-control" placeholder="Books Galore">
+  </div>
+  <button type="submit" class="btn btn-default center-block">List club members</button>
+</form>
+
+<form action="http://db4111.cloudapp.net:8111/clubs/info/speakers_list" class="col-md-4" method="POST">
+  <div class="form-group">
+    <label>Genre</label>
+    <input type="text" name="genre2" class="form-control" placeholder="Sports">
+  </div>
+  <button type="submit" class="btn btn-default center-block">Find speakers</button>
+</form>
+
+<form action="http://db4111.cloudapp.net:8111/clubs/info/new_books" class="col-md-4" method="POST">
+  <div class="form-group">
+    <label>Club Name</label>
+    <input type="text" name="name3" class="form-control" placeholder="Books Galore">
+    <label>Genre</label>
+    <input type="text" name="genre3" class="form-control" placeholder="non-fiction">
+  </div>
+  <button type="submit" class="btn btn-default center-block">Find new books</button>
+</form>
+
+<form action="http://db4111.cloudapp.net:8111/clubs/info/read" class="col-md-4" method="POST">
+  <div class="form-group">
+    <label>Club Name</label>
+    <input type="text" name="name4" class="form-control" placeholder="ABC Readers">
+    <label>Book Title</label>
+    <input type="text" name="title4" class="form-control" placeholder="Harry Potter">
+  </div>
+  <button type="submit" class="btn btn-default center-block">We read a book!</button>
+</form>
+
+<form action="http://db4111.cloudapp.net:8111/clubs/info/past_speakers" class="col-md-4" method="POST">
+  <div class="form-group">
+    <label>Club Name</label>
+    <input type="text" name="name5" class="form-control" placeholder="Books and Coffee">
+    <label>Speaker</label>
+    <input type="text" name="speaker5" class="form-control" placeholder="Mindy Kaling">
+  </div>
+  <button type="submit" class="btn btn-default center-block">We hired a speaker!</button>
+</form>
+
+<form action="http://db4111.cloudapp.net:8111/clubs/info/read_by" class="col-md-4" method="POST">
+  <div class="form-group">
+    <label>Club Name</label>
+    <input type="text" name="name6" class="form-control" placeholder="Books Books Books">
+    <label>Book Title</label>
+    <input type="text" name="title6" class="form-control" placeholder="the grapes of wrath">
+  </div>
+  <button type="submit" class="btn btn-default center-block">Who's read it?</button>
+</form>
+
+
+
+<div class="col-md-6">
+    {% for n in data %}
+    <div>{{n}}</div>
+    {% endfor %}
+  </div>
+</body>
+</html>
