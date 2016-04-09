@@ -1,3 +1,6 @@
+UPDATE 4/2016: Currently this web application will no longer run due to the expiration of services from Microsoft Azure, where the SQL database was being hosted.
+
+
 # Project 1, Part 3
 
 * Assigned: Oct-19
